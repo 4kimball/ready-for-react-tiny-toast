@@ -1,7 +1,10 @@
 import React, { FC, useState } from "react";
 
 interface Props {
-  handleClickSubmit = (e: React.FormEvent<HTMLFormElement>, text: string) => void;
+  handleClickSubmit: (
+    e: React.FormEvent<HTMLFormElement>,
+    text: string
+  ) => void;
 }
 
 const TodoForm: FC<Props> = ({ handleClickSubmit }) => {
@@ -11,7 +14,6 @@ const TodoForm: FC<Props> = ({ handleClickSubmit }) => {
     setText(newText);
   };
 
- 
   return (
     <>
       <form onSubmit={(e) => handleClickSubmit(e, text)}>

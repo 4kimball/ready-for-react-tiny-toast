@@ -1,20 +1,14 @@
 import React, { FC } from "react";
 
-import { removeTodo } from "src/utils";
-
 interface Props {
   todo: Todo;
-  forceUpdate: () => void;
+  handleClickRemove: (id: number) => void;
 }
-const TodoItem: FC<Props> = ({ todo, forceUpdate }) => {
-  const handleClickRemove = () => {
-    removeTodo(todo.id);
-    forceUpdate();
-  };
+const TodoItem: FC<Props> = ({ todo, handleClickRemove }) => {
   return (
     <div>
       <p>{todo.text}</p>
-      <button onClick={handleClickRemove}>삭제</button>
+      <button onClick={() => handleClickRemove(todo.id)}>삭제</button>
     </div>
   );
 };

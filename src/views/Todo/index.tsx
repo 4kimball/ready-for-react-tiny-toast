@@ -1,8 +1,6 @@
-import React, { FC, useState, useReducer } from "react";
-import { useEffect } from "react";
+import React, { FC } from "react";
 
 import useTodo from "src/hooks/useTodo";
-import { getAllTodo } from "src/utils";
 
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
