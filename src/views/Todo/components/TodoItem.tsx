@@ -6,7 +6,7 @@ interface Props {
 }
 const TodoItem: FC<Props> = ({ todo, handleClickRemove }) => {
   return (
-    <div>
+    <div className="todo-item">
       <p>{todo.text}</p>
       <button onClick={() => handleClickRemove(todo.id)}>삭제</button>
     </div>
