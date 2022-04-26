@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { render } from "react-dom";
+
 const Test: FC = () => {
   const handleClick = () => {
     const container = document.querySelector(".box");

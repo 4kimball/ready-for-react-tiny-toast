@@ -1,12 +1,13 @@
 import React, { useState, useReducer, useEffect } from "react";
 
 import { getAllTodo, setTodo, removeTodo } from "src/utils";
+import useToast from "./useToast";
 
 const useTodo = () => {
   const [_, forceUpdate] = useReducer((x) => x + 1, 0);
   const [text, setText] = useState<string>("");
   const [todoList, setTodoList] = useState<Todo[] | null>(null);
-
+  const toast = useToast();
   useEffect(() => {
     setTodoList(getAllTodo());
   }, [_]);
@@ -29,6 +30,7 @@ const useTodo = () => {
     setTodo(todo.id, todo);
     setText("");
     forceUpdate();
+    toast();
   };
 
   const handleClickRemove = (id: number) => {
